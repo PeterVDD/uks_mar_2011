@@ -15,7 +15,7 @@ namespace nothinbutdotnetstore.specs
         [Subject(typeof(ViewTheDepartmentsInADepartment))]
         public class when_run : concern
         {
-            It first_observation = () => 
+            It first_observation = () => { };
         }
     }
 }
