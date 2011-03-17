@@ -32,11 +32,6 @@ namespace nothinbutdotnetstore.specs
             Because b = () =>
                 sut.process(request);
 
-            It should_retrieve_the_report_model_through_the_delegate = () =>
-            {
-                retrieve_model.received(x => x(request));
-            };
-
             It should_tell_the_rendering_gateway_to_display_the_sub_departments = () =>
                 rendering_gateway.received(x => x.render(the_list_of_reportmodels));
 
