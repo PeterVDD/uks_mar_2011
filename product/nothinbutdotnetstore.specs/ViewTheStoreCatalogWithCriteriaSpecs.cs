@@ -26,8 +26,6 @@ namespace nothinbutdotnetstore.specs
                 retrieve_model = the_dependency<RetrieveModel<MyReportModel>>();
 
                 the_list_of_reportmodels = new MyReportModel();
-                input_model = new MyInputModel();
-
                 retrieve_model.setup(x => x(request)).Return(the_list_of_reportmodels);
             };
 
@@ -45,7 +43,6 @@ namespace nothinbutdotnetstore.specs
             static Request request;
             static MyReportModel the_list_of_reportmodels;
             static RenderingGateway rendering_gateway;
-            static MyInputModel input_model;
             static RetrieveModel<MyReportModel> retrieve_model;
         }
 
