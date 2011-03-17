@@ -12,11 +12,11 @@ namespace nothinbutdotnetstore.specs
     public class ViewTheModelWithCriteriaSpecs
     {
         public abstract class concern : Observes<ApplicationBehaviour,
-                                            ViewTheDepartmentsInADepartment>
+                                            ViewTheModelWithCriteria<MyReportModel>>
         {
         }
 
-        [Subject(typeof(ViewTheStoreCatalogWithCriteria))]
+        [Subject(typeof(ViewTheModelWithCriteria<MyReportModel>))]
         public class when_run : concern
         {
             Establish e = () =>
@@ -25,8 +25,10 @@ namespace nothinbutdotnetstore.specs
                 rendering_gateway = the_dependency<RenderingGateway>();
                 retrieve_model = the_dependency<RetrieveModel<MyReportModel>>();
 
-                the_list_of_reportmodels = new List<MyReportModel> { new MyReportModel() };
+                the_list_of_reportmodels = new MyReportModel();
                 input_model = new MyInputModel();
+
+                retrieve_model.setup(x => x(request)).Return(the_list_of_reportmodels);
             };
 
             Because b = () =>
@@ -41,13 +43,18 @@ namespace nothinbutdotnetstore.specs
                 rendering_gateway.received(x => x.render(the_list_of_reportmodels));
 
             static Request request;
-            static IEnumerable<MyReportModel> the_list_of_reportmodels;
+            static MyReportModel the_list_of_reportmodels;
             static RenderingGateway rendering_gateway;
             static MyInputModel input_model;
             static RetrieveModel<MyReportModel> retrieve_model;
         }
 
-        class MyReportModel {}
+        public class when_viewing_the_products_in_departement : concern
+        {
+            It should_retrieve_the_products_of_the_department = () => { };
+        }
+
+        public class MyReportModel {}
         class MyInputModel {}
     }
 }

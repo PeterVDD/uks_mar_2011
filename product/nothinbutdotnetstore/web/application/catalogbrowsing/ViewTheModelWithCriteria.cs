@@ -9,7 +9,7 @@ namespace nothinbutdotnetstore.web.application.catalogbrowsing
     {
         RenderingGateway rendering_gateway;
         RetrieveModel<ReportModel> retrieve_model;
- 
+
         public ViewTheModelWithCriteria(RenderingGateway rendering_gateway,
                                                 RetrieveModel<ReportModel> retrieve_model)
         {
@@ -23,6 +23,6 @@ namespace nothinbutdotnetstore.web.application.catalogbrowsing
         }
     }
 
-    public delegate ReportModel RetrieveModel< ReportModel>(Request request);
+    public delegate ReportModel RetrieveModel<ReportModel>(Request request);
 
 }
