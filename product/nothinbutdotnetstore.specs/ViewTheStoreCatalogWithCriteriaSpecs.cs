@@ -1,10 +1,7 @@
-using System.Collections.Generic;
 using developwithpassion.specifications.extensions;
 using Machine.Specifications;
 using developwithpassion.specifications.rhino;
-using nothinbutdotnetstore.web.application;
 using nothinbutdotnetstore.web.application.catalogbrowsing;
-using nothinbutdotnetstore.web.application.model;
 using nothinbutdotnetstore.web.core;
 
 namespace nothinbutdotnetstore.specs
