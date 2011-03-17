@@ -111,6 +111,8 @@
   <ItemGroup>
     <Compile Include="BasicHandlerSpecs.cs" />
     <Compile Include="CommandRegistrySpes.cs" />
+    <Compile Include="ViewTheStoreCatalogWithCriteria.cs" />
+    <Compile Include="ViewTheStoreCatalogWithCriteriaSpecs.cs" />
     <Compile Include="FrontControllerSpecs.cs" />
     <Compile Include="RenderingGatewaySpecs.cs" />
     <Compile Include="RequestCommandSpecs.cs" />

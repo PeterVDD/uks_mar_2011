@@ -80,6 +80,7 @@
     <Compile Include="web\application\catalogbrowsing\ViewTheDepartmentsInADepartment.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewTheMainDepartmentsInTheStore.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewTheProductsInADepartment.cs" />
+    <Compile Include="web\application\catalogbrowsing\ViewTheStoreCatalogWithCriteria.cs" />
     <Compile Include="web\application\model\Department.cs" />
     <Compile Include="web\application\model\Product.cs" />
     <Compile Include="web\application\StoreCatalog.cs" />
