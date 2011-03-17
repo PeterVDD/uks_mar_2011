@@ -49,11 +49,6 @@ namespace nothinbutdotnetstore.specs
             static RetrieveModel<MyReportModel> retrieve_model;
         }
 
-        public class when_viewing_the_products_in_departement : concern
-        {
-            It should_retrieve_the_products_of_the_department = () => { };
-        }
-
         public class MyReportModel {}
         class MyInputModel {}
     }
