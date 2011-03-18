@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using nothinbutdotnetstore.utility.containers;
 using nothinbutdotnetstore.utility.containers.basic;
+using nothinbutdotnetstore.web.application.stubs;
+using nothinbutdotnetstore.web.core.stubs;
 
 namespace nothinbutdotnetstore.tasks.startup
 {
@@ -17,6 +19,8 @@ namespace nothinbutdotnetstore.tasks.startup
 
         static void initialize_everything_else()
         {
+            //all_factories[typeof(StubStoreCatalog)] = new BasicDependencyFactory(Stub.with<StubStoreCatalog>());
+            all_factories.Add(typeof(StubStoreCatalog), new BasicDependencyFactory(()=>Stub.with<StubStoreCatalog>()));
             throw new NotImplementedException();
         }
 
