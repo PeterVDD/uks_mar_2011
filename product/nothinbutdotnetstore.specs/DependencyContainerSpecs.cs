@@ -1,3 +1,4 @@
+using System;
 using Machine.Specifications;
 using developwithpassion.specifications.rhino;
 using developwithpassion.specifications.extensions;
@@ -41,9 +42,9 @@ namespace nothinbutdotnetstore.specs
             static Dependencies dependencies;
         }
 
-        public class CreatedItem : DependencyFactory
-    {
-    }
+        public class CreatedItem
+        {
+        }
     }
 
 }
