@@ -21,19 +21,20 @@ namespace nothinbutdotnetstore.tasks.startup
 
         static void initialize_everything_else()
         {
-            all_factories.Add(typeof(FrontController),new AutomaticDependencyFactory(current_strategy(),
-                typeof(DefaultFrontController),current_container));
-
-            all_factories.Add(typeof(CommandRegistry),new AutomaticDependencyFactory(current_strategy(),
-                typeof(DefaultCommandRegistry),current_container));
-
-            all_factories.Add(typeof(IEnumerable<RequestCommand>),new AutomaticDependencyFactory(current_strategy(),
-                typeof(StubSetOfCommands),current_container));
+            register_factory<FrontController, DefaultFrontController>();
+            register_factory<CommandRegistry, DefaultCommandRegistry>();
+            register_factory<IEnumerable<RequestCommand>, StubSetOfCommands>();
         }
 
-        ConstructorSelection current_strategy(Type item)
+        static ConstructorSelection current_strategy()
         {
             return new GreedyConstructorParameterStrategy().apply_to;
+        }
+
+        static void register_factory<RegisteredType, ConcreteType>()
+        {
+            all_factories.Add(typeof(RegisteredType),
+                              new AutomaticDependencyFactory(current_strategy(), typeof(ConcreteType), current_container));
         }
 
         static void initialize_core_components()
